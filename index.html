@@ -6,7 +6,7 @@
     <title>Maksymilian Żyliński – Senior Fullstack Engineer</title>
     <meta
       name="description"
-      content="Portfolio of Maksymilian Żyliński, Senior Fullstack Engineer (Angular, React, React Native, Java, Spring, databases). Projects, blog and contact."
+      content="Portfolio of Maksymilian Żyliński, Senior Fullstack Engineer (Angular, React, React Native, Java, Spring, databases). Projects and contact."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -209,6 +209,101 @@
           animation: none;
         }
       }
+      .project {
+        margin-top: 12px;
+        padding: 20px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--bar);
+      }
+      .project + .project {
+        margin-top: 20px;
+      }
+      .project h2 {
+        margin: 0;
+        font-size: clamp(20px, 3vw, 26px);
+        color: var(--strong);
+        line-height: 1.2;
+      }
+      .project h3 {
+        margin: 20px 0 4px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--accent);
+      }
+      .project h3::before {
+        content: "## ";
+        color: var(--muted);
+      }
+      .project p {
+        margin: 8px 0 0;
+        max-width: 72ch;
+      }
+      .project ul {
+        margin: 4px 0 0;
+        padding-left: 20px;
+        max-width: 72ch;
+      }
+      .project li::marker {
+        color: var(--muted);
+      }
+      .badge {
+        display: inline-block;
+        margin-top: 8px;
+        padding: 0 10px;
+        border: 1px solid var(--warm);
+        border-radius: 999px;
+        font-size: 13px;
+        color: var(--warm);
+      }
+      .tags {
+        margin: 12px 0 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .project ul.tags {
+        padding-left: 0;
+      }
+      .tags li {
+        padding: 0 8px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .shots {
+        margin: 16px 0 0;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .shots figure {
+        margin: 0;
+      }
+      .shots img,
+      .wide img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+      }
+      .shots figcaption {
+        margin-top: 4px;
+        text-align: center;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .wide {
+        margin: 16px 0 0;
+      }
+      .note {
+        color: var(--muted);
+        font-size: 14px;
+      }
       footer {
         max-width: 960px;
         margin: 20px auto 0;
@@ -232,6 +327,12 @@
         }
         dl.contact dd {
           margin-bottom: 8px;
+        }
+        .shots {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .project {
+          padding: 14px;
         }
         .title {
           margin-right: 0;
@@ -274,8 +375,10 @@
               I build full-stack applications: Angular and React on the web,
               React Native on mobile, Java and Spring on the back end, with
               databases underneath. I care about fast interfaces, clean code and
-              learning new things. [Add one or two sentences about yourself
-              here.]
+              learning new things. Right now I am building
+              <a href="#pompa">Pompa</a>, an all-in-one fitness app, and
+              <a href="#machinewatch">MachineWatch</a>, live monitoring for CNC
+              machines.
             </p>
             <p class="status">
               <span class="dot">●</span> open to work
@@ -292,27 +395,184 @@
           </p>
           <ul class="list">
             <li>
-              <a class="name" href="#">[project-1]/</a>
+              <a class="name" href="#pompa">pompa/</a>
               <span class="desc"
-                >[One sentence: what it is and who it is for.]
-                <span class="dim">angular, java, spring</span></span
+                >All-in-one fitness app: workouts, runs, meals, body and
+                friends. <span class="dim">in progress · expo, spring boot</span></span
               >
             </li>
             <li>
-              <a class="name" href="#">[project-2]/</a>
+              <a class="name" href="#machinewatch">machinewatch/</a>
               <span class="desc"
-                >[A mobile app that does X.]
-                <span class="dim">react-native, expo</span></span
+                >Live monitoring of CNC machines in the browser.
+                <span class="dim">node, react, python, mqtt</span></span
               >
             </li>
             <li>
-              <a class="name" href="#">[project-3]/</a>
+              <a class="name" href="https://github.com/makzylinski/connext" rel="noopener">connext/</a>
               <span class="desc"
-                >[An open source project or tool.]
-                <span class="dim">github</span></span
+                >Social matching app with swipeable profiles, matches and chat,
+                on web and mobile.
+                <span class="dim">angular, react-native, spring</span></span
+              >
+            </li>
+            <li>
+              <a class="name" href="https://github.com/makzylinski/TaskFlow" rel="noopener">taskflow/</a>
+              <span class="desc"
+                >Kanban-style task manager.
+                <span class="dim">angular, spring boot, mysql</span></span
+              >
+            </li>
+            <li>
+              <a class="name" href="https://github.com/makzylinski/spring-security-jwt" rel="noopener">spring-security-jwt/</a>
+              <span class="desc"
+                >Reference project for stateless JWT authentication.
+                <span class="dim">spring security, jjwt, mysql</span></span
               >
             </li>
           </ul>
+        </section>
+
+        <section aria-label="Pompa" id="pompa">
+          <p class="prompt">
+            <span class="user">maksymilian@portfolio</span
+            ><span class="dim">:</span><span class="path">~</span
+            ><span class="dim">$ </span>cat projects/pompa/README.md
+          </p>
+          <article class="project">
+            <h2>Pompa</h2>
+            <span class="badge">● in active development · not released yet (TestFlight)</span>
+            <p>
+              An all-in-one app for people who train: log gym workouts set by
+              set, record runs with GPS, count calories and macros, track body
+              measurements, and follow friends to like and comment on their
+              workouts. I am building it right now, end to end: mobile app,
+              backend, infrastructure and tests.
+            </p>
+
+            <div class="shots">
+              <figure>
+                <img src="img/pompa/today.webp" width="390" height="844" loading="lazy"
+                  alt="Pompa Today screen: calories left for the day and friends' workouts" />
+                <figcaption>Today</figcaption>
+              </figure>
+              <figure>
+                <img src="img/pompa/food.webp" width="390" height="844" loading="lazy"
+                  alt="Pompa Food screen: calorie ring, protein, carbs and fat, meals of the day" />
+                <figcaption>Food</figcaption>
+              </figure>
+              <figure>
+                <img src="img/pompa/workouts.webp" width="390" height="844" loading="lazy"
+                  alt="Pompa Workouts screen: start a gym workout or a GPS run" />
+                <figcaption>Workouts</figcaption>
+              </figure>
+              <figure>
+                <img src="img/pompa/body.webp" width="390" height="844" loading="lazy"
+                  alt="Pompa Body screen: weight chart and measurement history" />
+                <figcaption>Body</figcaption>
+              </figure>
+            </div>
+            <p class="note">UI in English and Polish (i18n). Screenshots from the Polish version.</p>
+
+            <h3>What it does</h3>
+            <ul>
+              <li>Gym workouts with sets, reps and weights; editing and history; personal records.</li>
+              <li>Runs recorded with GPS in the background: live map, distance, pace, km splits;
+                vehicle detection and auto-pause.</li>
+              <li>Food log with search across ~3.4 million products from Open Food Facts,
+                barcode scanning, daily calorie and macro goals worked out at onboarding.</li>
+              <li>Body measurements with charts, metric and imperial units.</li>
+              <li>Social feed: follow people, likes, comments with @mentions, workout photos,
+                sharing to Instagram Stories, push notifications, report and block.</li>
+              <li>iOS Live Activity: the workout in progress on the lock screen and Dynamic Island.</li>
+            </ul>
+
+            <h3>Stack</h3>
+            <ul>
+              <li><b>Mobile:</b> Expo SDK 58, React Native 0.88, React 19 with React Compiler,
+                TypeScript (strict), Expo Router, Zustand, Axios, react-native-maps, i18next.</li>
+              <li><b>Backend:</b> Spring Boot 4.1, Java 21, MySQL with Flyway migrations,
+                Meilisearch for food search, JWT with refresh tokens, email verification (Resend).</li>
+              <li><b>Infrastructure:</b> Railway, photos on Cloudflare R2, Sentry crash reports,
+                Expo push, EAS builds and over-the-air updates.</li>
+              <li><b>Quality:</b> Testcontainers integration tests, Jest + React Native Testing Library,
+                Maestro mobile E2E flows, Playwright E2E against production every 6 hours,
+                GitHub Actions CI (lint, typecheck, tests, bundle).</li>
+            </ul>
+
+            <h3>Interesting problems</h3>
+            <ul>
+              <li><b>Fast search over millions of products.</b> Moved food search from SQL to a
+                Meilisearch index and tuned it for a small server.</li>
+              <li><b>Honest GPS data.</b> Filtering imprecise fixes, GPS drift and car rides out of
+                a run, with the same distance and calorie logic on the phone (live) and on the
+                server (saved).</li>
+              <li><b>Offline-safe workouts.</b> The workout in progress survives app restarts and
+                is written to storage on every change.</li>
+              <li><b>Safety for a social app:</b> reporting, blocking, moderation and filtering of
+                offensive words, as App Store guidelines require.</li>
+            </ul>
+            <p class="note">The repositories are private while the app is unreleased. Happy to walk
+              through the code in an interview.</p>
+          </article>
+        </section>
+
+        <section aria-label="MachineWatch" id="machinewatch">
+          <p class="prompt">
+            <span class="user">maksymilian@portfolio</span
+            ><span class="dim">:</span><span class="path">~</span
+            ><span class="dim">$ </span>cat projects/machinewatch/README.md
+          </p>
+          <article class="project">
+            <h2>MachineWatch</h2>
+            <p>
+              Live monitoring of CNC machines for manufacturing companies. It
+              reads data straight from the machine controllers and shows the
+              state, utilization and alarms of every machine in a browser, on a
+              desktop or a phone, from anywhere. Data leaves the factory over an
+              outbound encrypted connection, so the customer does not open any
+              ports or set up a VPN.
+            </p>
+            <figure class="wide">
+              <img src="img/machinewatch/dashboard.webp" width="1200" height="630" loading="lazy"
+                alt="MachineWatch dashboard: machines working, paused and in alarm, with a 7-day utilization chart" />
+            </figure>
+
+            <h3>How it works</h3>
+            <ul>
+              <li><b>Collector (Python)</b> on a Windows PC in the factory polls machines over
+                MTConnect, and older Haas controllers over RS-232 (Q-commands), then publishes
+                to MQTT. A durable SQLite queue keeps every reading when the internet drops and
+                sends it later.</li>
+              <li><b>Broker:</b> Mosquitto over TLS / WebSocket on port 443, with a separate
+                write-only account per site.</li>
+              <li><b>Backend (Node.js, TypeScript, Express):</b> idempotent ingest into
+                PostgreSQL / TimescaleDB, REST API, live updates over WebSocket, JWT sessions,
+                login lockout, audit log.</li>
+              <li><b>Dashboard (React, Vite, Recharts):</b> live machine list, charts, utilization,
+                OEE report, alarms with the controller's message.</li>
+            </ul>
+
+            <h3>Interesting problems</h3>
+            <ul>
+              <li><b>Multi-tenancy:</b> companies, sites and machines, isolated in code and again
+                with PostgreSQL row-level security, covered by an isolation test matrix.</li>
+              <li><b>No data loss:</b> an end-to-end test stops the broker for 8 seconds and checks
+                that readings from the outage reach the database afterwards.</li>
+              <li><b>OEE</b> (availability × performance) per shift schedule, with the ideal cycle
+                time estimated from real part counts.</li>
+              <li><b>Quiet alerting:</b> email only after an alarm lasts long enough, with
+                cooldowns and a daily cap, plus a monthly report.</li>
+              <li><b>Operations:</b> Docker Compose, Caddy (HTTPS), fail2ban, one-command deploy
+                with backup and health check, one-click collector updates on site.</li>
+            </ul>
+            <ul class="tags">
+              <li>typescript</li><li>node.js</li><li>express</li><li>postgresql</li>
+              <li>timescaledb</li><li>react</li><li>python</li><li>mqtt</li>
+              <li>mtconnect</li><li>docker</li><li>github actions</li>
+            </ul>
+            <p class="note">Private repository. Happy to walk through the code in an interview.</p>
+          </article>
         </section>
 
         <section aria-label="Skills">
@@ -322,34 +582,21 @@
             ><span class="dim">$ </span>cat skills.txt
           </p>
           <ul class="inline">
+            <li>TypeScript</li>
             <li>Angular</li>
             <li>React</li>
-            <li>React Native</li>
+            <li>React Native / Expo</li>
             <li>Java</li>
-            <li>Spring</li>
-            <li>Databases</li>
-          </ul>
-        </section>
-
-        <section aria-label="Blog">
-          <p class="prompt">
-            <span class="user">maksymilian@portfolio</span
-            ><span class="dim">:</span><span class="path">~</span
-            ><span class="dim">$ </span>ls -t blog/ | head -3
-          </p>
-          <ul class="list blog">
-            <li>
-              <span class="date">2026-10-12</span
-              ><a class="desc" href="#">react-native-fast-lists.md</a>
-            </li>
-            <li>
-              <span class="date">2026-09-28</span
-              ><a class="desc" href="#">from-frontend-to-ai-engineering.md</a>
-            </li>
-            <li>
-              <span class="date">2026-09-10</span
-              ><a class="desc" href="#">second-brain-in-obsidian.md</a>
-            </li>
+            <li>Spring Boot</li>
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>MySQL</li>
+            <li>PostgreSQL</li>
+            <li>Docker</li>
+            <li>Jest</li>
+            <li>Playwright</li>
+            <li>Cypress</li>
+            <li>GitHub Actions</li>
           </ul>
         </section>
 
@@ -361,21 +608,13 @@
           </p>
           <dl class="contact">
             <dt>email</dt>
-            <dd><a href="mailto:your@email.com">your@email.com</a></dd>
+            <dd><a href="mailto:makzylinski@gmail.com">makzylinski@gmail.com</a></dd>
             <dt>github</dt>
             <dd>
-              <a href="https://github.com/YOUR-LOGIN" rel="noopener"
-                >github.com/YOUR-LOGIN</a
+              <a href="https://github.com/makzylinski" rel="noopener"
+                >github.com/makzylinski</a
               >
             </dd>
-            <dt>linkedin</dt>
-            <dd>
-              <a href="https://www.linkedin.com/in/YOUR-LOGIN" rel="noopener"
-                >linkedin.com/in/YOUR-LOGIN</a
-              >
-            </dd>
-            <dt>cv</dt>
-            <dd><a href="cv.pdf">cv.pdf</a></dd>
           </dl>
         </section>
 
